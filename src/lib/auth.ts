@@ -7,10 +7,6 @@ import bcrypt from "bcrypt";
 
 const isProduction = process.env.NODE_ENV === "production";
 
-if (isProduction && !process.env.NEXTAUTH_SECRET) {
-  throw new Error("NEXTAUTH_SECRET must be set in production.");
-}
-
 const DEV_ONLY_DUMMY_HASH =
   "$2b$10$1wTruT2t6kxbjMNFjv3R3ujnJmQKk6tE5o5Y4q0S7R1CV2wAPOa9a";
 
