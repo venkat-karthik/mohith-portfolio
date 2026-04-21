@@ -27,10 +27,10 @@ export default function TestimonialsSection({ testimonials }: { testimonials: Te
               className="glass-card"
               style={{ display: "flex", flexDirection: "column", padding: "32px", position: "relative" }}
             >
-              <div style={{ color: "var(--accent)", fontSize: "3rem", lineHeight: "1", opacity: 0.3, position: "absolute", top: "24px", left: "24px", fontFamily: "var(--font-serif)" }}>&ldquo;</div>
+              <div style={{ color: "var(--accent)", fontSize: "3rem", lineHeight: "1", opacity: 0.3, position: "absolute", top: "24px", left: "24px", fontFamily: "var(--font-serif)" }}>{"\u201C"}</div>
               
               <p style={{ color: "var(--foreground)", fontSize: "1.1rem", lineHeight: "1.6", fontStyle: "italic", marginBottom: "24px", position: "relative", zIndex: 1, paddingTop: "16px" }}>
-                &ldquo;{item.quote}&rdquo;
+                {"\u201C"}{item.quote}{"\u201D"}
               </p>
               
               <div style={{ marginTop: "auto" }}>

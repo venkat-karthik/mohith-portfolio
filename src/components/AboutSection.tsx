@@ -4,8 +4,17 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import type { About } from "@/types/models";
 
+// Google Drive share links are not direct image URLs — filter them out
+function isDirectImageUrl(url: string | null): url is string {
+  if (!url) return false;
+  if (url.includes("drive.google.com")) return false;
+  return url.startsWith("/") || url.startsWith("http://") || url.startsWith("https://");
+}
+
 export default function AboutSection({ aboutData }: { aboutData: About | null }) {
   if (!aboutData || !aboutData.content) return null;
+
+  const showImage = isDirectImageUrl(aboutData.imageUrl);
 
   return (
     <section
@@ -31,7 +40,7 @@ export default function AboutSection({ aboutData }: { aboutData: About | null })
             alignItems: "center",
           }}
         >
-          {aboutData.imageUrl && (
+          {showImage && (
             <motion.div
               initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
               whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -53,7 +62,7 @@ export default function AboutSection({ aboutData }: { aboutData: About | null })
                   }}
                 >
                   <Image
-                    src={aboutData.imageUrl ?? ""}
+                    src={aboutData.imageUrl!}
                     alt="About Me"
                     fill
                     sizes="(max-width: 768px) 100vw, 400px"
