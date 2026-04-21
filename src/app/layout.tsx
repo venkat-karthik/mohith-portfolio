@@ -16,6 +16,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Mohith Portfolio",
   description: "Full Stack Engineer & UI/UX Designer — Mohith's personal portfolio.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
