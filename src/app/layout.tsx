@@ -14,8 +14,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Premium Portfolio Setup",
-  description: "A premium interactive developer portfolio.",
+  title: "Mohith Portfolio",
+  description: "Full Stack Engineer & UI/UX Designer — Mohith's personal portfolio.",
 };
 
 export default function RootLayout({
